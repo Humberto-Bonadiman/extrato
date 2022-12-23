@@ -6,13 +6,11 @@ import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import { fetchEncontrarContaPeloId } from '../services/api';
-// import { useAppDispatch } from '../app/hooks';
 import Logo from '../images/digital_wallet.png';
 import '../styles/paginaInicial.css';
 
 function PaginaInicial() {
   const navigate = useNavigate();
-  // const dispatch = useAppDispatch();
 
   const [idConta, setIdConta] = useState(0);
   const [error, setError] = useState(false);
@@ -33,19 +31,6 @@ function PaginaInicial() {
       setError(true);
     }
   };
-
-  /* const UserIsOn = () => {
-    const value = localStorage.getItem('token');
-    if (typeof value === 'string') {
-      const parse = JSON.parse(value);
-      if (parse) {
-        dispatch(alterToken(parse));
-      }
-    }
-  }; */
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  // useEffect(UserIsOn, []);
 
   const ALERT = (
     <Alert
