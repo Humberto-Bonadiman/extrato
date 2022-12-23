@@ -1,9 +1,10 @@
 import React from 'react';
 
+
 function Registro() {
-  return (
+  return(
     <div>Registro</div>
-  )
+  );
 };
 
 export default Registro;

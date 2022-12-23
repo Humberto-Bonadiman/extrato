@@ -1,11 +1,16 @@
-import axios from "axios";
+const appJson = 'application/json';
+const NUMBER = 8081;
+const PORT = process.env.REACT_APP_BACKEND_PORT || NUMBER;
+const URL = process.env.REACT_APP_HOSTNAME || 'localhost';
 
-const apiConta = axios.create({
-  baseURL: "http://localhost:8081/conta",
-});
-
-const apiTransferencia = axios.create({
-  baseURL: "http://localhost:8081/transferencia",
-});
-
-export default { apiConta, apiTransferencia };
+export const fetchEncontrarContaPeloId = async (id: number) => {
+  const fecthFindAccount = fetch(`http://${URL}:${PORT}/conta/${id}`, {
+    method: 'GET',
+    headers: {
+      Accept: appJson,
+      'Content-Type': appJson,
+    },
+  });
+  const response = await fecthFindAccount;
+  return response;
+}
