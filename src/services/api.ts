@@ -1,3 +1,5 @@
+import { transferenciaInterface } from "../interfaces/transferencias";
+
 const appJson = 'application/json';
 const NUMBER = 8081;
 const PORT = process.env.REACT_APP_BACKEND_PORT || NUMBER;
@@ -15,6 +17,19 @@ export const fetchEncontrarContaPeloId = async (id: number) => {
   return response;
 };
 
+export const fetchEncontrarContaPeloNome = async (nomeResponsavel: String) => {
+  const url = `http://${URL}:${PORT}/conta?nomeResponsavel=${nomeResponsavel}`;
+  const fecthEncontrarConta = fetch(url, {
+    method: 'GET',
+    headers: {
+      Accept: appJson,
+      'Content-Type': appJson,
+    },
+  });
+  const response = await fecthEncontrarConta;
+  return response;
+}
+
 export const fetchCriarConta = async (nomeResponsavel: string) => {
   const fecthCriar = fetch(`http://${URL}:${PORT}/conta`, {
     method: 'POST',
@@ -29,3 +44,28 @@ export const fetchCriarConta = async (nomeResponsavel: string) => {
   const response = await fecthCriar;
   return response;
 };
+
+export const fetchEncontrarTransferencias = async (contaId: number) => {
+  const fetchEncontrar = fetch(`http://${URL}:${PORT}/transferencia/id-conta/${contaId}`, {
+    method: 'GET',
+    headers: {
+      Accept: appJson,
+      'Content-Type': appJson,
+    },
+  });
+  const response = await fetchEncontrar;
+  return response;
+};
+
+export const fetchTransferencia = async (body: transferenciaInterface) => {
+  const fetchTransferir = fetch(`http://${URL}:${PORT}/transferencia`, {
+    method: 'POST',
+    headers: {
+      Accept: appJson,
+      'Content-Type': appJson,
+    },
+    body: JSON.stringify(body),
+  });
+  const response = await fetchTransferir;
+  return response;
+}

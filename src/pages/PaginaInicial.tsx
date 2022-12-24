@@ -5,27 +5,25 @@ import Figure from 'react-bootstrap/Figure';
 import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
-import { fetchEncontrarContaPeloId } from '../services/api';
+import { fetchEncontrarContaPeloNome } from '../services/api';
 import Logo from '../images/digital_wallet.png';
 import '../styles/paginaInicial.css';
 
 function PaginaInicial() {
   const navigate = useNavigate();
 
-  const [idConta, setIdConta] = useState(0);
+  const [nome, setNome] = useState('');
   const [error, setError] = useState(false);
 
   const handleClick = async (event: { preventDefault: () => void; }) => {
     event.preventDefault();
-    const result = await fetchEncontrarContaPeloId(idConta);
+    const result = await fetchEncontrarContaPeloNome(nome);
     const GET = 200;
     if (result.status === GET) {
       const body = await result.json();
       localStorage.setItem('id_conta', JSON.stringify(body?.idConta));
       localStorage.setItem('nomeResponsavel', JSON.stringify(body?.nomeResponsavel));
-      setTimeout(() => {
-        navigate('/extrato');
-      }, 1000);
+      navigate('/extrato');
     }
     if (result.status !== GET) {
       setError(true);
@@ -39,7 +37,7 @@ function PaginaInicial() {
       data-testid="login__element-invalid-id"
     >
       <p>
-        Id não encontrado&nbsp;&nbsp;&nbsp;&nbsp;
+        Não existe uma conta com este nome&nbsp;&nbsp;&nbsp;&nbsp;
         <Button onClick={() => setError(false)} variant="outline-danger">
           X
         </Button>
@@ -62,11 +60,11 @@ function PaginaInicial() {
         style={ { maxWidth: '400px', minWidth: '300px' } }
       >
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label data-testid="login__label-id-conta">Id da Conta</Form.Label>
+          <Form.Label data-testid="login__label-id-conta">Nome Responsável da Conta</Form.Label>
           <Form.Control
-            type="number"
+            type="text"
             data-testid="login_input-id-conta"
-            onChange={ ({ target }) => setIdConta(Number(target.value)) }
+            onChange={ ({ target }) => setNome(target.value) }
           />
         </Form.Group>
         <Button
