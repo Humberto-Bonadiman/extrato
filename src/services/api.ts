@@ -1,4 +1,4 @@
-import { transferenciaInterface } from "../interfaces/transferencias";
+import { filtroCompletoInterface, operadorInterface, periodoInterface, transferenciaInterface } from "../interfaces/transferencias";
 
 const appJson = 'application/json';
 const NUMBER = 8081;
@@ -65,6 +65,46 @@ export const fetchTransferencia = async (body: transferenciaInterface) => {
       'Content-Type': appJson,
     },
     body: JSON.stringify(body),
+  });
+  const response = await fetchTransferir;
+  return response;
+}
+
+export const fetchFiltroPeriodo = async (periodo: periodoInterface) => {
+  const fetchTransferir = fetch(`http://${URL}:${PORT}/transferencia/periodo`, {
+    method: 'POST',
+    headers: {
+      Accept: appJson,
+      'Content-Type': appJson,
+    },
+    body: JSON.stringify(periodo),
+  });
+  const response = await fetchTransferir;
+  return response;
+}
+
+export const fetchFiltroOperador = async (operador: operadorInterface) => {
+  const fetchTransferir = fetch(`http://${URL}:${PORT}/transferencia/operador`, {
+    method: 'POST',
+    headers: {
+      Accept: appJson,
+      'Content-Type': appJson,
+    },
+    body: JSON.stringify(operador),
+  });
+  const response = await fetchTransferir;
+  return response;
+}
+
+export const fetchFiltroOperadorPeriodo = async (filtro: filtroCompletoInterface) => {
+  const url = `http://${URL}:${PORT}/transferencia/operador/periodo`;
+  const fetchTransferir = fetch(url, {
+    method: 'POST',
+    headers: {
+      Accept: appJson,
+      'Content-Type': appJson,
+    },
+    body: JSON.stringify(filtro),
   });
   const response = await fetchTransferir;
   return response;

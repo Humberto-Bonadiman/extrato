@@ -5,3 +5,21 @@ export interface transferenciaInterface {
   nomeOperadorTransacao: null | String;
   contaId: Number;
 }
+
+export interface periodoInterface {
+  idConta: Number;
+  dataInicial: String;
+  dataFinal: String;
+}
+
+export interface operadorInterface {
+  idConta: Number;
+  nomeOperadorTransacao: String;
+}
+
+export interface filtroCompletoInterface {
+  idConta: Number;
+  dataInicial: String;
+  dataFinal: String;
+  nomeOperadorTransacao: String;
+}
