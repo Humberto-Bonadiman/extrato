@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Alert, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-// import { useAppDispatch, useAppSelector } from '../app/hooks';
 import TabelaExtratos from '../components/TabelaExtratos';
 import { filtroCompletoInterface, operadorInterface, periodoInterface } from '../interfaces/transferencias';
 import { fetchEncontrarTransferencias, fetchFiltroOperador, fetchFiltroOperadorPeriodo, fetchFiltroPeriodo } from '../services/api';
