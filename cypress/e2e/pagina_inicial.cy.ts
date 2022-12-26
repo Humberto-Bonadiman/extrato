@@ -21,7 +21,7 @@ describe('Testa a página inicial', () => {
   });
 
 
-  it('should go to "/account" page with correct data', () => {
+  it('deve ir para a página de extrato', () => {
     cy.visit('http://localhost:3000');
     cy.get('[data-testid="login__label-id-conta"]').type('João da Silva Souza');
     

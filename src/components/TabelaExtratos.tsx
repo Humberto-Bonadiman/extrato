@@ -47,7 +47,7 @@ const TabelaExtratos: React.FC<IProps> = ({ extratos }) => {
   }, []);
 
   return (
-    <Table data-testid="transition-table" responsive="sm">
+    <Table data-testid="extrato-table" responsive="sm">
       <thead>
         <tr>
           <th>id</th>

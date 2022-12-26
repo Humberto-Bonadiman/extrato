@@ -119,28 +119,28 @@ const Extrato: React.FC = () => {
       <Container className="inputs-container">
         <Form.Group className="mb-3">
           <Form.Label
-            data-testid="transaction__label-nome"
+            data-testid="transaction__label-inicio"
           >
             Data de início
           </Form.Label>
           <Form.Control
             type="date"
             placeholder="DD/MM/YYYY"
-            data-testid="transaction__nome"
+            data-testid="transaction__inicio"
             onChange={ ({ target }) => {
               setPeriodoInicial(target.value);
               setPeriodoFinal(target.value);
             } }
           />
           <Form.Label
-            data-testid="transaction__label-nome"
+            data-testid="transaction__label-fim"
           >
             Data de fim
           </Form.Label>
           <Form.Control
             type="date"
             placeholder="DD/MM/YYYY"
-            data-testid="transaction__nome"
+            data-testid="transaction__fim"
             onChange={ ({ target }) => setPeriodoFinal(target.value) }
           />
           <Form.Label
