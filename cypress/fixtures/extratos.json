@@ -1,0 +1,50 @@
+[
+  {
+    "id": 6,
+    "dataTransferencia": "2022-12-26",
+    "valor": 3000,
+    "tipo": "ENTRADA",
+    "nomeOperadorTransacao": "Guilherme Azevedo Aguiar",
+    "contaId": 2
+  },
+  {
+    "id": 7,
+    "dataTransferencia": "2022-10-20",
+    "valor": -300,
+    "tipo": "SAIDA",
+    "nomeOperadorTransacao": "Maria Costa Souza",
+    "contaId": 2
+  },
+  {
+    "id": 8,
+    "dataTransferencia": "2022-05-14",
+    "valor": 3000,
+    "tipo": "DEPOSITO",
+    "nomeOperadorTransacao": null,
+    "contaId": 2
+  },
+  {
+    "id": 9,
+    "dataTransferencia": "2022-06-14",
+    "valor": 3000,
+    "tipo": "DEPOSITO",
+    "nomeOperadorTransacao": null,
+    "contaId": 2
+  },
+  {
+    "id": 10,
+    "dataTransferencia": "2022-07-14",
+    "valor": -500,
+    "tipo": "SAQUE",
+    "nomeOperadorTransacao": null,
+    "contaId": 2
+  },
+  {
+    "id": 11,
+    "dataTransferencia": "2022-07-12",
+    "valor": -700,
+    "tipo": "SAQUE",
+    "nomeOperadorTransacao": null,
+    "contaId": 2
+  }
+]

@@ -3,10 +3,8 @@ import login from '../fixtures/login.json';
 const NUMBER = 8081;
 const PORT = process.env.REACT_APP_BACKEND_PORT || NUMBER;
 const URL = process.env.REACT_APP_HOSTNAME || 'localhost';
-const name = "João da Silva Souza";
 
-const reqValueLogin = `http://${URL}:${PORT}/conta?nomeResponsavel=${name}`;
-const url = "http://localhost:8081/conta?nomeResponsavel=Jo%C3%A3o%20da%20Silva%20Souza";
+const url = `http://${URL}:${PORT}/conta?nomeResponsavel=Jo%C3%A3o%20da%20Silva%20Souza`;
 
 describe('Testa a página inicial', () => {
   it('se ela contêm as informações corretas', () => {

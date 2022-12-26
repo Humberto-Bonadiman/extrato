@@ -109,7 +109,9 @@ const Extrato: React.FC = () => {
   }
 
   useEffect(() => {
-    encontrarExtratos();
+    setTimeout(() => {
+      encontrarExtratos();
+    }, 1000);
   }, []);
 
   return(
